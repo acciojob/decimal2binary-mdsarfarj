@@ -1,13 +1,17 @@
-function decimalToBinary(num) {
+function decimalToBinary(decimal) {
   //Write you code here
-	let ans="";
-	while (num<0) {
-		let rem=num%2;
-		ans=rem+ans;
-		num/=2;
-	}
-	return ans;
-  
+if (decimal === 0) {
+    return "0";
+  }
+
+  let binary = "";
+  while (decimal > 0) {
+    let remainder = decimal % 2;
+    binary = remainder + binary;
+    decimal = Math.floor(decimal / 2);
+  }
+
+  return binary;
 }
 
 window.decimalToBinary = decimalToBinary;
